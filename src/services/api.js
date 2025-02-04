@@ -1,17 +1,21 @@
 const callToApi = () => {
     // Llamamos a la API
-    return fetch("https://swapi.dev/api/people/5") // Este 5 es el id de Leia Skywalker
+    return fetch("https://hp-api.onrender.com/api/characters") 
       .then((response) => response.json())
-      .then((response) => {
+      .then((data) => {
         // Cuando responde la API podemos limpiar los datos aquí
-        const result = {
-          name: response.name,
-          birthYear: response.birth_year,
-          height: response.height,
-          mass: response.mass,
-          eyeColor: response.eye_color,
-        };
-        return result;
+        return data.map((character) => {
+          return {
+            img: character.image !== "" ? character.image : "https://placehold.co/210x295/90EE90/FFF/?text=Expecto%20Patronum",
+            name: character.name,
+            alternativeName: character.alternate_names,
+            specie: character.species,
+            gender: character.gender,
+            id: character.id,
+            house: character.house,
+            alive: character.alive,
+          }
+        })
       });
   };
   

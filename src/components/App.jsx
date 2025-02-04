@@ -2,30 +2,18 @@
 //import callToApi from "../services/api";
 //import ls from "../services/localStorage";
 
+import { useEffect, useState } from "react";
 import Header from "./Header";
+import callToApi from "../services/api";
 
 function App() {
 
-  /*
-  const [starWarsData, setStarWarsData] = useState({});
-  const [email, setEmail] = useState(ls.get("email", ""));
-  // Llamar a la api con useEffect
+  const [characters, setCharacters] = useState([]);
 
-  useEffect(() => {
-    // Dentro de useEffect llamamos a la API
-    callToApi().then((response) => {
-      // Cuando la API responde guardamos los datos en el estado para que se vuelva a renderizar el componente
-      ls.set("email", email);
-      setStarWarsData(response);
-    });
-    // Aquí ponemos un array vacío porque solo queremos que se llame a la API la primera vez
-  }, [email]);
+  useEffect (() => {
+    callToApi().then((data) => {setCharacters(data)})
+  }, [])
 
-  const handleEmail = (ev) => {
-    setEmail(ev.target.value);
-  };
-
-  */
   return (
     <>
     <Header />
