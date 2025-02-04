@@ -2,6 +2,8 @@
 //import callToApi from "../services/api";
 //import ls from "../services/localStorage";
 
+import Header from "./Header";
+
 function App() {
 
   /*
@@ -26,6 +28,7 @@ function App() {
   */
   return (
     <>
+    <Header />
     <h1>Template react</h1>
     <section>
       <h2>Subtítulo</h2>
