@@ -1,14 +1,19 @@
-#root {
-  max-width: 1280px;
+#root {  
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  background-color: grey;
+  height: 100%;
 }
 
-.card {
-  padding: 2em;
+.error-msg {
+  margin-top: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(237, 113, 60);
+  text-decoration: underline;
+  background-color: rgb(246, 232, 215);
+  width: fit-content;
+  padding: 5px;
 }
 
-.read-the-docs {
-  color: #888;
-}
+

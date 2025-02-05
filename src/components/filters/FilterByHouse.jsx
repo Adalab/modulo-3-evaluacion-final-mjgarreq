@@ -8,12 +8,15 @@ function FilterByHouse({filterHouse, setFilterHouse}) {
   }
 
   return (
-    <select name="house" id="house" className="form-select" value={filterHouse} onChange={handleSelect}>
-      <option value="gryffindor">Gryffindor</option>
-      <option value="slytherin">Slytherin</option>
-      <option value="hufflepuff">Hufflepuff</option>
-      <option value="ravenclaw">Ravenclaw</option>
-    </select>
+    <div>
+      <label htmlFor="house">Selecciona una casa: </label>
+      <select name="house" id="house" className="form-select" value={filterHouse} onChange={handleSelect}>
+        <option value="gryffindor">Gryffindor</option>
+        <option value="slytherin">Slytherin</option>
+        <option value="hufflepuff">Hufflepuff</option>
+        <option value="ravenclaw">Ravenclaw</option>
+      </select>
+    </div>
   )
 }
 

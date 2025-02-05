@@ -1,7 +1,5 @@
-// import '../styles/App.scss';
-//import callToApi from "../services/api";
+import '../styles/App.scss';
 import ls from "../services/localStorage";
-
 import { useEffect, useState } from "react";
 import Header from "./Header";
 import callToApi from "../services/api";
@@ -16,6 +14,7 @@ function App() {
   const [filterName, setFilterName] = useState(ls.get("filterName",""));
   const [filterHouse, setFilterHouse] = useState(ls.get("filterHouse","gryffindor"));
 
+
   useEffect (() => {
     callToApi(filterHouse).then((data) => {setCharacters(data)})
   }, [filterHouse])
@@ -28,16 +27,17 @@ function App() {
     ls.set("filterName", filterName)
   }, [filterName]);
 
+  
 
   const filterCharacters = characters
-  .filter((character) => character.name.toLowerCase().includes(filterName))
+  .filter((character) => character.name.toLowerCase().includes(filterName.toLowerCase()))
   .filter((character) => filterHouse === "gryffindor" ? true : character.house.toLowerCase().includes(filterHouse))
 
   const {pathname} = useLocation()
   const characterRoute = matchPath('/character/:idCharacter', pathname)
   const characterIdRoute = characterRoute ? characterRoute.params.idCharacter : null;
   const characterDetail = characters.find((character) => character.id === characterIdRoute)
-  console.log(characterDetail)
+
   
   return (
     <>
@@ -47,7 +47,7 @@ function App() {
         <>
           
           <Filters filterName={filterName} setFilterName={setFilterName} filterHouse={filterHouse} setFilterHouse={setFilterHouse}/>
-          {filterCharacters.length !==0 ? <CharacterList characters={filterCharacters}/> : <p>No hay ningún personaje con el nombre {filterName}</p>} 
+          {filterCharacters.length !==0 ? <CharacterList characters={filterCharacters}/> : <p className='error-msg'>No hay ningún personaje con el nombre {filterName}</p>} 
         </>
       }/>
       <Route path="/character/:idCharacter" element={<CharacterDetail data={characterDetail}/>}/>

@@ -1,5 +1,6 @@
 import Character from "./Character";
 import PropTypes from "prop-types";
+import "../../styles/CharacterList.scss"
 
 function CharacterList({characters}) {
   console.log(characters)

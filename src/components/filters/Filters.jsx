@@ -1,6 +1,7 @@
 import FilterByCharacter from "./FilterByCharacter";
 import FilterByHouse from "./FilterByHouse";
 import PropTypes from "prop-types";
+import "../../styles/Form.scss"
 
 function Filters({filterName, setFilterName, filterHouse, setFilterHouse}) {
 

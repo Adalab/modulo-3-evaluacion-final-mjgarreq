@@ -10,5 +10,5 @@ export default defineConfig({
     },
     open: true,
   },
-  base: "/nombre-repo/",
+  base: "/modulo-3-evaluacion-final-mjgarreq/",
 })

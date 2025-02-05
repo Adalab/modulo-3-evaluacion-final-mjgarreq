@@ -1,0 +1,68 @@
+.detail {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+    &-article {
+        display: flex;
+        gap: 40px;
+        text-align: center;
+        justify-content: center;
+        border: 20px solid beige;
+        width: 260px;
+        height: 200px;
+        background-color: beige;
+        align-items: center;
+        font-size: 11px;
+        margin: 5px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        @media (min-width: 450px){
+            width: 400px;
+        }
+        @media (min-width: 750px) {
+            width: 480px;
+            font-size: 15px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        &_house {
+            display: flex;
+            flex-direction: row;
+        }
+        &_img {
+            width: 100px;
+            @media (min-width: 450px) {
+                width: 120px;
+            }
+            @media (min-width: 750px) {
+                width: 150px;
+            }
+        }
+        &_div {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            align-items: baseline;
+            width: 250px;
+            @media (min-width: 750px) {
+                width: 270px;
+            }
+        }
+
+      
+    }
+}
+
+
+
+
+.house-img {
+    width: 30px;
+    height: 30px;
+}

@@ -6,7 +6,7 @@ const callToApi = (valueHouse) => {
         // Cuando responde la API podemos limpiar los datos aquí
         return data.map((character) => {
           return {
-            img: character.image !== "" ? character.image : "https://placehold.co/210x295/90EE90/FFF/?text=Expecto%20Patronum",
+            img: character.image !== "" ? character.image : "https://placehold.co/210x295/C6EBC6/FFF/?text=Expecto%20Patronum",
             name: character.name,
             alternativeName: character.alternate_names,
             specie: character.species,
@@ -16,7 +16,18 @@ const callToApi = (valueHouse) => {
             alive: character.alive,
           }
         })
-      });
+      })
+      .then((data) => {
+        return data.sort(function (a, b) {
+          if (a.name > b.name) {
+            return 1;
+          }
+          if (a.name < b.name) {
+            return -1;
+          }
+          return 0;
+        })
+      })
   };
   
   export default callToApi;
