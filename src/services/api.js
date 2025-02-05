@@ -1,6 +1,6 @@
-const callToApi = () => {
+const callToApi = (valueHouse) => {
     // Llamamos a la API
-    return fetch("https://hp-api.onrender.com/api/characters") 
+    return fetch(`https://hp-api.onrender.com/api/characters/house/${valueHouse}`) 
       .then((response) => response.json())
       .then((data) => {
         // Cuando responde la API podemos limpiar los datos aquí
