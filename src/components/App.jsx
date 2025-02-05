@@ -47,7 +47,7 @@ function App() {
         <>
           
           <Filters filterName={filterName} setFilterName={setFilterName} filterHouse={filterHouse} setFilterHouse={setFilterHouse}/>
-           <CharacterList characters={filterCharacters}/>
+          {filterCharacters.length !==0 ? <CharacterList characters={filterCharacters}/> : <p>No hay ningún personaje con el nombre {filterName}</p>} 
         </>
       }/>
       <Route path="/character/:idCharacter" element={<CharacterDetail data={characterDetail}/>}/>
