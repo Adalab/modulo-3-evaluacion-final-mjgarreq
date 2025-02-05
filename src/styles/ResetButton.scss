@@ -1,0 +1,19 @@
+.buttonDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.buttonReset {
+    align-items: center;
+    background-color:rgb(210, 161, 77);
+    color: wheat;
+    font-weight: bold;
+    font-size: 15px;
+    border: 2px solid beige;
+    opacity: 0.7;
+    width: 80px;
+    padding: 10px;
+    border-radius: 20px;
+}

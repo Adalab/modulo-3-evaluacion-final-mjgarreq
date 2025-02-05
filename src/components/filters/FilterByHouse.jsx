@@ -8,7 +8,7 @@ function FilterByHouse({filterHouse, setFilterHouse}) {
   }
 
   return (
-    <div>
+    <div className="form-house">
       <label htmlFor="house">Selecciona una casa: </label>
       <select name="house" id="house" className="form-select" value={filterHouse} onChange={handleSelect}>
         <option value="gryffindor">Gryffindor</option>
