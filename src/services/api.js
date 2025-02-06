@@ -1,3 +1,5 @@
+import Map from "../images/harry-potter-map.jpg"
+
 const callToApi = (valueHouse) => {
     // Llamamos a la API
     return fetch(`https://hp-api.onrender.com/api/characters/house/${valueHouse}`) 
@@ -6,9 +8,9 @@ const callToApi = (valueHouse) => {
         // Cuando responde la API podemos limpiar los datos aquí
         return data.map((character) => {
 
-          
+
           return {
-            img: character.image !== "" ? character.image : "https://placehold.co/210x295/C6EBC6/FFF/?text=Expecto%20Patronum",
+            img: character.image !== "" ? character.image : Map,
             name: character.name,
             alternativeName: character.alternate_names,
             specie: character.species,
