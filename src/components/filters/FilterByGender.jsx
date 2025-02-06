@@ -1,4 +1,4 @@
-
+import PropTypes from "prop-types";
 
 function FilterByGender({filterGender, setFilterGender}) {
 
@@ -16,6 +16,11 @@ function FilterByGender({filterGender, setFilterGender}) {
         </select>
     </div>
   )
+}
+
+FilterByGender.propTypes = {
+  filterGender: PropTypes.string,
+  setFilterGender: PropTypes.func,
 }
 
 export default FilterByGender

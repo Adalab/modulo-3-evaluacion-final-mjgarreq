@@ -23,7 +23,9 @@ Filters.propTypes = {
   filterName: PropTypes.string,
   setFilterName: PropTypes.func,
   filterHouse: PropTypes.string,
-  setFilterHouse: PropTypes.func
+  setFilterHouse: PropTypes.func,
+  filterGender: PropTypes.string,
+  setFilterGender: PropTypes.func,
 }
 
 export default Filters
