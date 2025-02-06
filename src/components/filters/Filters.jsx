@@ -2,8 +2,9 @@ import FilterByCharacter from "./FilterByCharacter";
 import FilterByHouse from "./FilterByHouse";
 import PropTypes from "prop-types";
 import "../../styles/Form.scss"
+import FilterByGender from "./FilterByGender";
 
-function Filters({filterName, setFilterName, filterHouse, setFilterHouse}) {
+function Filters({filterName, setFilterName, filterHouse, setFilterHouse, filterGender, setFilterGender}) {
 
   const handleForm = (ev) => {
     ev.preventDefault();
@@ -13,6 +14,7 @@ function Filters({filterName, setFilterName, filterHouse, setFilterHouse}) {
     <form method="get" className="form" onSubmit={handleForm}>
       <FilterByCharacter filterName={filterName} setFilterName={setFilterName} />
       <FilterByHouse filterHouse={filterHouse} setFilterHouse={setFilterHouse}/>
+      <FilterByGender filterGender={filterGender} setFilterGender={setFilterGender}/>
     </form>
   )
 }

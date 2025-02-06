@@ -10,11 +10,13 @@ import { matchPath, Route, Routes, useLocation } from "react-router-dom";
 import ResetButton from './ResetButton';
 import NotFound from './NotFound';
 
+
 function App() {
 
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState(ls.get("filterName",""));
   const [filterHouse, setFilterHouse] = useState(ls.get("filterHouse","gryffindor"));
+  const [filterGender, setFilterGender] = useState(ls.get("filterGender", ""))
 
 
   useEffect (() => {
@@ -29,11 +31,15 @@ function App() {
     ls.set("filterName", filterName)
   }, [filterName]);
 
+  useEffect(() => {
+    ls.set("filterGender", filterGender)
+  }, [filterGender]);
   
 
   const filterCharacters = characters
   .filter((character) => character.name.toLowerCase().includes(filterName.toLowerCase()))
   .filter((character) => filterHouse === "gryffindor" ? true : character.house.toLowerCase().includes(filterHouse))
+  .filter((character) => filterGender ? character.gender === filterGender : true)
 
   const {pathname} = useLocation()
   const characterRoute = matchPath('/character/:idCharacter', pathname)
@@ -42,7 +48,8 @@ function App() {
 
   const resetInfo = () => {
     setFilterName("");
-    setFilterHouse("gryffindor");  
+    setFilterHouse("gryffindor");
+    setFilterGender("");  
   }
 
   const errorPage = "¡ERROR! La ruta a la que estás intentando acceder no existe, revisa el navegador.";
@@ -58,7 +65,7 @@ function App() {
 
           <ResetButton resetInfo={resetInfo}/>
 
-          <Filters filterName={filterName} setFilterName={setFilterName} filterHouse={filterHouse} setFilterHouse={setFilterHouse}/>
+          <Filters filterName={filterName} setFilterName={setFilterName} filterHouse={filterHouse} setFilterHouse={setFilterHouse} filterGender={filterGender} setFilterGender={setFilterGender}/>
           
           {filterCharacters.length !==0 ? <CharacterList characters={filterCharacters}/> : <p className='error-msg'>No hay ningún personaje con el nombre {filterName}</p>} 
           
