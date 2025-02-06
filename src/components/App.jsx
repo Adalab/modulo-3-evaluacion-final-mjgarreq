@@ -67,7 +67,7 @@ function App() {
 
           <Filters filterName={filterName} setFilterName={setFilterName} filterHouse={filterHouse} setFilterHouse={setFilterHouse} filterGender={filterGender} setFilterGender={setFilterGender}/>
           
-          {filterCharacters.length !==0 ? <CharacterList characters={filterCharacters}/> : <p className='error-msg'>No hay ningún personaje con el nombre {filterName}</p>} 
+          {filterCharacters.length !==0 ? <CharacterList characters={filterCharacters}/> : <><section className='section-error'><p className='error-msg'>No hay ningún personaje con el nombre {filterName}, de la casa {filterHouse} y género {filterGender}</p></section></>} 
           
         </>
       }/>
