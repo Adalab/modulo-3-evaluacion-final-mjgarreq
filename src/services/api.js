@@ -5,6 +5,8 @@ const callToApi = (valueHouse) => {
       .then((data) => {
         // Cuando responde la API podemos limpiar los datos aquí
         return data.map((character) => {
+
+          
           return {
             img: character.image !== "" ? character.image : "https://placehold.co/210x295/C6EBC6/FFF/?text=Expecto%20Patronum",
             name: character.name,
