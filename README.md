@@ -1,13 +1,13 @@
-# Módulo 3: Ejercicio de evaluaión final
+# Módulo 3: Ejercicio de evaluación final
 
-Este ejercicio de evalución del **módulo 3** se ha realizado mediante Vite y React. El objetivo era pintar un listado de personajes de Harry Potter realizando una llamada a la API https://hp-api.onrender.com/.
+Este ejercicio de evaluación del **módulo 3** se ha realizado mediante Vite y React. El objetivo era pintar un listado de personajes de Harry Potter realizando una llamada a la API https://hp-api.onrender.com/.
 
 ## EJERCICIOS
 
 1. Listado de personajes
 
 Mediante una llamada a la API (mencionada arriba), pintamos en la página principal un listado de los personajes de Harry Potter; de cada personaje aparece una foto, el nombre y la especie.
-Además, la API <u>*no*</u> devuelve imagen de muchos personajes, por lo que se ha puesto una foto de relleno.
+Además, la API <u>*no*</u> devuelve imágenes de muchos personajes, por lo que se ha puesto una foto de relleno.
 
 2. Filtrado de personajes
 
@@ -29,9 +29,9 @@ Mediante rutas y React Router DOM, al clicar en un personaje del listado se mues
 
 - Tanto el input como el select están dentro de la etiqueta "form".
 - Se ha evitado que se refresque la página por defecto al realizar cambios en el formulario.
-- Se puede filtrar independientemente de si la usuaria busca en mayúsculas o minúsuclas.
+- Se puede filtrar independientemente de si la usuaria busca en mayúsculas o minúsculas.
 - Si no hay resultados de búsqueda, aparece un mensaje ("No hay ningún peronaje con el nombre XXX").
-- Si estás en el detalle de un perosnaje y pinchas en el botón de "Volver", el input aparece rellenado si la usuaria había filtrado por campo de texto, y el resultado de personajes está filtrado.
+- Si estás en el detalle de un personaje y pinchas en el botón de "Volver", el input aparece rellenado si la usuaria había filtrado por campo de texto, y el resultado de personajes está filtrado.
 
 ## BONUS
 
