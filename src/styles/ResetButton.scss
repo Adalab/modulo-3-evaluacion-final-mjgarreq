@@ -6,6 +6,7 @@
 }
 
 .buttonReset {
+    cursor: pointer;
     align-items: center;
     background-color:rgb(210, 161, 77);
     color: wheat;
@@ -16,4 +17,14 @@
     width: 80px;
     padding: 10px;
     border-radius: 20px;
+    outline: 1px solid;
+    outline-color: rgba(49, 138, 172, 0.4);
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+
+    &:hover {
+        box-shadow: inset 0 0 20px rgba(18, 59, 74, 0.5), 0 0 20px rgba(49, 138, 172, 0.4);
+        outline-color: rgba(20, 34, 40, 0);
+        outline-offset: 80px;
+        text-shadow: 1px 1px 6px #2a2424;
+    } 
 }

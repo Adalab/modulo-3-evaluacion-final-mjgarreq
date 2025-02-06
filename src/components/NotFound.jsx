@@ -1,5 +1,6 @@
 import Error from "../images/error.jpg";
 import "../styles/NotFound.scss";
+import PropTypes from "prop-types";
 
 function NotFound({errorText}) {
     
@@ -13,6 +14,10 @@ function NotFound({errorText}) {
         </main>
     </>
   )
+}
+
+NotFound.propTypes = {
+  errorText: PropTypes.string,
 }
 
 export default NotFound

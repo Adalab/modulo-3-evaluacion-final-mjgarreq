@@ -67,7 +67,7 @@ function App() {
       <Route path="/character/:idCharacter" element={
         <>
           
-          {characterDetail !== undefined ? <><Header /> <CharacterDetail data={characterDetail}/></> : <NotFound errorText={errorMsg}/>}
+          {characterDetail ? <><Header /> <CharacterDetail data={characterDetail} errorText={errorPage}/></> : <NotFound errorText={errorMsg}/>}
         </>
       }/>  
       <Route path='*' element={<NotFound errorText={errorPage}/>}/>

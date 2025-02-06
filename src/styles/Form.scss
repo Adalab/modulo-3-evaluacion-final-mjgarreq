@@ -10,12 +10,12 @@
     text-align: center;
 
     &_input {
-        background-color: grey;
+        background-color: rgb(196, 194, 194);
         border: 2px solid beige;
         width: 200px;
         padding: 5px;
-        color: wheat;
         font-size: 15px;
+      
         
         @media (min-width: 650px) {
             width: 300px;
@@ -23,7 +23,7 @@
     }
 
     ::placeholder {
-        color: rgb(218, 218, 218);
+        color: rgb(112, 107, 107);
         opacity: .5;
  
     }
@@ -40,4 +40,5 @@
     font-size: 15px;
     width: 200px;
     text-align: center;
+    cursor: cell;
 }

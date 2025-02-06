@@ -5,8 +5,9 @@ import Slytherin from "../../images/icons8-slytherin-30.png";
 import Hufflepuff from "../../images/icons8-hufflepuff-30.png";
 import Ravenclaw from "../../images/icons8-ravenclaw-30.png";
 import "../../styles/CharacterDetail.scss";
+import NotFound from "../NotFound";
 
-function CharacterDetail({data}) {
+function CharacterDetail({data, errorText}) {
     const checkSpecie = () => {
         if (data.specie === "human") {
             return <p>Especie: humano/a <i className="fa-solid fa-person-half-dress"></i></p>
@@ -52,32 +53,45 @@ function CharacterDetail({data}) {
         }
     }
   return (
-    <section className="detail">
-        <Link to="/"><i className="fa-solid fa-angles-left"></i>Volver</Link>
-        <article className="detail-article">
-            <img src={data.img} alt="characterImage" className="detail-article_img"/>
-            <div className="detail-article_div">
-                <h3>{data.name}</h3>
-                <article className="detail-article_house">
-                    {checkHouse()}
-                </article>
-                <p>Género: {data.gender === "male" ? "hombre" : "mujer"}</p>
-                <p>Estatus: {data.alive
-                    ?
-                    <>vivo/a <i className="fa-solid fa-heart-pulse"></i></>
-                    :
-                    <>muerto/a <i className="fa-solid fa-heart-crack"></i></>
-                }</p>
-                {checkSpecie()}
-                {data.alternativeName.length !== 0 ? <p>Otros nombres: {checkAlternativeName()}</p> : null}
-            </div>
-        </article>
-    </section>
+    <>
+    {data ? 
+        
+        <>
+        <section className="detail">
+            <Link to="/"><i className="fa-solid fa-angles-left"></i>Volver</Link>
+            <article className="detail-article">
+                <img src={data.img} alt="characterImage" className="detail-article_img"/>
+                <div className="detail-article_div">
+                    <h3>{data.name}</h3>
+                    <article className="detail-article_house">
+                        {checkHouse()}
+                    </article>
+                    <p>Género: {data.gender === "male" ? "hombre" : "mujer"}</p>
+                    <p>Estatus: {data.alive
+                        ?
+                        <>vivo/a <i className="fa-solid fa-heart-pulse"></i></>
+                        :
+                        <>muerto/a <i className="fa-solid fa-heart-crack"></i></>
+                    }</p>
+                    {checkSpecie()}
+                    {data.alternativeName.length !== 0 ? <p>Otros nombres: {checkAlternativeName()}</p> : null}
+                </div>
+            </article>
+        </section>
+        </>
+    
+        :
+
+        <NotFound errorText={errorText}/>
+
+    }
+    </>
   )
 }
 
 CharacterDetail.propTypes = {
   data: PropTypes.object,
+  errorText: PropTypes.string,
 }
 
 export default CharacterDetail

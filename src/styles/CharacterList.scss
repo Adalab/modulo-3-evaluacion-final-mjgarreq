@@ -2,6 +2,8 @@
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
+    text-align: center;
+    margin-top: 50px;
     
     @media (min-width: 495px) {
         grid-template-columns: 1fr 1fr;
@@ -13,9 +15,6 @@
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
     
-    text-align: center;
-    margin-top: 50px;
-
     &-link {
         text-decoration: none;
         color: grey;
