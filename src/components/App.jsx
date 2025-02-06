@@ -3,11 +3,12 @@ import ls from "../services/localStorage";
 import { useEffect, useState } from "react";
 import Header from "./Header";
 import callToApi from "../services/api";
-import CharacterList from "./character-list/CharacterList";
+import CharacterList from "./character/CharacterList";
 import Filters from "./filters/Filters";
-import CharacterDetail from "./CharacterDetail";
+import CharacterDetail from "./character/CharacterDetail";
 import { matchPath, Route, Routes, useLocation } from "react-router-dom";
 import ResetButton from './ResetButton';
+import NotFound from './NotFound';
 
 function App() {
 
@@ -41,15 +42,20 @@ function App() {
 
   const resetInfo = () => {
     setFilterName("");
-    setFilterHouse("gryffindor");
+    setFilterHouse("gryffindor");  
   }
+
+  const errorPage = "¡ERROR! La ruta a la que estás intentando acceder no existe, revisa el navegador.";
+  const errorMsg = "¡ERROR! El personaje que estás buscado no existe.";
   
   return (
     <>
-    <Header />
+    
     <Routes>
       <Route path="/" element={
         <>
+          <Header />  
+
           <ResetButton resetInfo={resetInfo}/>
 
           <Filters filterName={filterName} setFilterName={setFilterName} filterHouse={filterHouse} setFilterHouse={setFilterHouse}/>
@@ -58,7 +64,14 @@ function App() {
           
         </>
       }/>
-      <Route path="/character/:idCharacter" element={<CharacterDetail data={characterDetail}/>}/>
+      <Route path="/character/:idCharacter" element={
+        <>
+          
+          {characterDetail !== undefined ? <><Header /> <CharacterDetail data={characterDetail}/></> : <NotFound errorText={errorMsg}/>}
+        </>
+      }/>  
+      <Route path='*' element={<NotFound errorText={errorPage}/>}/>
+      
     </Routes>
     </>
   );

@@ -1,0 +1,21 @@
+
+.header-notFound {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+.main-notFound {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-p {
+        font-size: 30px;
+        font-weight: bold;
+        color: brown;
+        border: 4px dotted brown;
+        padding: 40px;
+    }
+}

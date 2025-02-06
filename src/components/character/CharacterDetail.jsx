@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import Gryffindor from "../images/icons8-gryffindor-30.png";
-import Slytherin from "../images/icons8-slytherin-30.png";
-import Hufflepuff from "../images/icons8-hufflepuff-30.png";
-import Ravenclaw from "../images/icons8-ravenclaw-30.png";
-import "../styles/CharacterDetail.scss"
+import Gryffindor from "../../images/icons8-gryffindor-30.png";
+import Slytherin from "../../images/icons8-slytherin-30.png";
+import Hufflepuff from "../../images/icons8-hufflepuff-30.png";
+import Ravenclaw from "../../images/icons8-ravenclaw-30.png";
+import "../../styles/CharacterDetail.scss";
 
 function CharacterDetail({data}) {
     const checkSpecie = () => {
