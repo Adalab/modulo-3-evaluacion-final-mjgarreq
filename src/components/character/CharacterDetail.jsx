@@ -58,7 +58,7 @@ function CharacterDetail({data, errorText}) {
         
         <>
         <section className="detail">
-            <Link to="/"><i className="fa-solid fa-angles-left"></i>Volver</Link>
+            <Link to="/" className="detail-link"><i className="fa-solid fa-angles-left"></i>Volver</Link>
             <article className="detail-article">
                 <img src={data.img} alt="characterImage" className="detail-article_img"/>
                 <div className="detail-article_div">

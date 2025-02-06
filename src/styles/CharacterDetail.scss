@@ -53,8 +53,16 @@
                 width: 270px;
             }
         }
+    }
 
-      
+    &-link {
+        text-decoration: none;
+        background-color:rgb(210, 161, 77);
+        color: wheat;
+        border: 2px solid beige;
+        padding: 7px;
+        border-radius: 20px;
+        cursor: pointer;
     }
 }
 
